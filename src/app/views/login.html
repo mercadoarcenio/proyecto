@@ -1,0 +1,95 @@
+<div class="container">
+<div class="col-md-12">
+	<!-- <h3>{{title}}</h3> -->
+</div>
+
+
+
+
+<!-- 		<form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-7 no-padding">
+ 
+			
+		<p>
+			<label>Email:</label>
+			<input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" required="">
+			<span *ngIf="!email.valid && email.touched">El email no es valido</span>
+		</p>
+
+		<p>
+			<label>Contraseña:</label>
+			<input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password" required="">
+			<span *ngIf="!password.valid && password.touched">La contraseña no es valido</span>
+		</p>	
+
+		<input type="submit" value="Entrar" class="btn btn-primary" [disabled]=!loginForm.form.valid>	
+
+</form> -->
+	
+
+
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="form-signin">
+
+ 
+ 
+  <h1 class="h3 mb-3 font-weight-normal">Iniciar sesion</h1>
+  <label for="inputEmail" class="sr-only">Correo electronico</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Correo electronico" required autofocus name="email" #email="ngModel" [(ngModel)]="user.email" required="">
+  <span *ngIf="!email.valid && email.touched" id="color">El email no es valido</span>
+
+
+  <label for="inputPassword" class="sr-only">Contraseña</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" name="password" #password="ngModel" [(ngModel)]="user.password" required="">
+<span *ngIf="!password.valid && password.touched" id="color">La contraseña no es valido</span>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" [disabled]=!loginForm.form.valid>Ingresar</button >
+  <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+</form> -->
+
+<!-- </div> -->
+	<br>
+  <div class="login-container full-cover-background"  >
+    <div class="form-container">
+  <div class="identity-alert alert alert-success" *ngIf="identity && identity.sub">
+  !Te has identificado correctamente! Bienvenido {{identity.email}}
+</div>
+<br>
+<div class="identity-danger alert alert-danger" *ngIf="identity && identity.data">
+  ! No te has identificado correctamente! 
+</div>
+        <p class="text-center" style="margin-top: 17px;">
+           <!-- <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i> -->
+           <img src="../assets/img/ucosd.png" alt="" width="100px" height="120px">
+       </p>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">inicia sesión</h4>
+       <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="group-material-login">
+  <input type="email" class="material-login-control"  maxlength="70"   required name="email" #email="ngModel" [(ngModel)]="user.email">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account "></i> &nbsp; Correo electronico</label>
+            </div><br>
+            <div class="group-material-login">
+<input type="password" class="material-login-control" required maxlength="70" name="password" #password="ngModel" [(ngModel)]="user.password">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña</label>
+
+<br>
+
+
+            </div>
+            
+            <button class="btn-login" type="submit">Ingresar al sistema &nbsp; <i class="zmdi zmdi-arrow-right"></i></button>
+        </form>
+    </div> 
+  
+  </div>
+
+
+

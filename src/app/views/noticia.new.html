@@ -1,0 +1,54 @@
+<div class="col-md-12">
+	<h3>{{page_title}}</h3>
+
+
+
+
+
+		<br>
+  <div class="login-container full-cover-background"  >
+
+
+
+
+    <div class="form-container">
+<div class="alert alert-success" *ngIf="status_noticia == 'success'"> 
+ La Noticia se ha creado correctamente 
+</div>
+
+<div class="alert alert-danger" *ngIf="status_noticia == 'error'">  
+ !La Noticia no se ha creado!
+</div>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">Rellenar formuario</h4>
+       <form #noticiaNewForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="group-material-login">
+  <input type="text" class="material-login-control "  maxlength="70"   required name="title" #title="ngModel"[(ngModel)]="noticia.title">
+  <span *ngIf="!title.valid && title.touched">El titulo no es correcto</span>
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account "></i> &nbsp; Titulo Noticia</label>
+            </div><br>
+
+            <div class="group-material-login">
+ <textarea class="material-login-control form-control" required name="description" #description="ngModel" [(ngModel)]=" noticia.description"></textarea>
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account "></i> &nbsp; Descripcion</label>
+            </div><br>
+
+            <div class ="group-material-login">
+  <input type="data" class="material-login-control "  maxlength="70"   required name="title">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account "></i> &nbsp; Parrafo</label>
+            </div><br>
+      
+            
+           <input type="submit" value="{{page_title}}" class="btn btn-success">
+
+
+        </form>
+    </div> 
+ 
+  </div>
+</div>

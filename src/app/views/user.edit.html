@@ -1,0 +1,36 @@
+<div class="col-md-12">
+	<h3>{{title}}</h3>
+
+	<button class="btn btn-success">boton</button>
+
+	<form #updateForm="ngForm" (ngSubmit)="onSubmit()" class="col-md-7 no-padding">
+		<p>
+		<label>Nombre: </label>
+		<input type="text" class="form-cotrol" name="name" #name="ngModel" [(ngModel)]="user.name" required="">
+<br>
+		<span *ngIf="!name.valid && name.touched">El nombre es obligatorio</span>
+     </p>
+
+     		<p>
+		<label>Apellidos : </label>
+		<input type="text" class="form-cotrol" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required="">
+<br>
+		<span *ngIf="!surname.valid && surname.touched">Los apellido son obligatorio</span>
+     </p>
+
+     		<p>
+		<label>Email:</label>
+		<input type="text" class="form-cotrol" name="email" #email="ngModel" [(ngModel)]="user.email" required="">
+<br>
+		<span *ngIf="!email.valid && email.touched">El email es obligatorio</span>
+     </p>
+
+     		<p>
+		<label>Contraseña</label>
+		<input type="password" class="form-cotrol" name="password" #password="ngModel" [(ngModel)]="user.password">
+<br>
+		<span *ngIf="!password.valid && password.touched">La contraseña es obligatoria</span>
+     </p>
+     <input type="submit" class="btn btn-warning" value="{{title}}" [disabled]="!updateForm.form.valid">
+	</form>
+</div>

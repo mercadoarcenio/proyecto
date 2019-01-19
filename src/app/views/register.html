@@ -1,0 +1,95 @@
+
+<!-- <div class="col-md-12">
+	<h3>{{title}}</h3>
+</div> -->
+
+
+	<!-- <form #registerForm="ngForm" (ngSubmit)="onSubmit(); registerForm.reset();" class="col-md-7 no-padding">
+		<div class="row">
+               <div class="col-xs-4 col-xs-offset-4  ">
+                <img src="assets/img/ucosd.png" class="logo center-block" class="profile-img-card" width="150px" height="150px">
+                </div>
+            
+        </div>
+
+		<p>
+			<label>Nombre</label>
+			<input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="user.name" required="">
+
+			<span *ngIf="!name.valid && name.touched">El nombre no es valido</span>
+		</p>
+
+		<p>
+			<label>Apellidos</label>
+			<input type="text" class="form-control" name="surname" #surname="ngModel" [(ngModel)]="user.surname" required="">
+			<span *ngIf="!surname.valid && surname.touched">Los apellidos no son validos valido</span>
+		</p>
+
+		<p>
+			<label>Email</label>
+			<input type="email" class="form-control" name="email" #email="ngModel" [(ngModel)]="user.email" required="">
+			<span *ngIf="!email.valid && email.touched">El email no es valido</span>
+		</p> 
+		<p>
+			<label>Contraseña</label>
+			<input type="password" class="form-control" name="password" #password="ngModel" [(ngModel)]="user.password" required="">
+			<span *ngIf="!password.valid && password.touched">La contraseña no es valido</span>
+		</p>	
+		<input type="submit" value="Registrate" class="btn btn-success" [disabled]="!registerForm.form.valid">					
+
+	</form>
+</div> -->
+
+
+ <div class="login-container full-cover-background">
+    <div class="form-container">
+        <p class="text-center" style="margin-top: 17px;">
+           <i class="zmdi zmdi-account-circle zmdi-hc-5x"></i>
+       </p>
+       <h4 class="text-center all-tittles" style="margin-bottom: 30px;">Registrarse</h4>
+       <form #registerForm="ngForm" (ngSubmit)="onSubmit(); registerForm.reset();">
+            <div class="group-material-login">
+              <input type="text" class="material-login-control" name="name" #name="ngModel" [(ngModel)]="user.name" maxlength="70">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account"></i> &nbsp; Nombre</label>
+            </div>
+
+             <div class="group-material-login">
+              <input type="text" class="material-login-control" name="surname" #surname="ngModel" [(ngModel)]="user.surname" maxlength="70">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account"></i> &nbsp; Apellidos</label>
+            </div>
+
+             <div class="group-material-login">
+              <input type="email" class="material-login-control" name="email" #email="ngModel" [(ngModel)]="user.email" maxlength="70">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-account"></i> &nbsp; Email</label>
+            </div>
+
+            <div class="group-material-login">
+              <input type="password" class="material-login-control" required="" name="password" #password="ngModel" [(ngModel)]="user.password" maxlength="70">
+              <span class="highlight-login"></span>
+              <span class="bar-login"></span>
+              <label><i class="zmdi zmdi-lock"></i> &nbsp; Contraseña</label>
+
+
+ <div class="alert alert-success" *ngIf="status == 'success'">	
+ Te has registrado correctamente, logueate
+ <a [routerLink]="['/login']">desde aqui</a> 
+</div>
+
+<div class="alert alert-danger" *ngIf="status == 'error'">	
+ !No te has registrado correctamente!
+</div>
+            </div>
+
+            <button class="btn-login" type="submit" [disabled]="!registerForm.form.valid">Registrarse &nbsp; <i class="zmdi zmdi-arrow-right" ></i></button>
+        </form>
+    </div>   
+  </div>
+
+
+
